@@ -45,7 +45,7 @@ public class Main {
         }, new FreeMarkerEngine());
 
     get("/db", (req, res) -> {
-      Connection connection = null;
+       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
       try {
         connection = DatabaseUrl.extract().getConnection();
@@ -69,6 +69,7 @@ public class Main {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
     }, new FreeMarkerEngine());
+
 
   }
 
